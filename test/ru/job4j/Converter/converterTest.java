@@ -1,16 +1,25 @@
 package ru.job4j.Converter;
+
+import org.junit.Test;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class converterTest {
 
     @Test
-    public void When140rubleTo2Euro() {
+    public void rubleToEuro() {
+        int in = 140;
+        int expected = 2;
+        int out = converter.rubleToEuro(in);
+        Assert.assertEquals(expected, out);
     }
 
     @Test
-    public void When140rubleTo3Dollars() {
+    public void rubleToDollars() {
+        int in = 180;
+        int expected = 3;
+        int out = converter.rubleToDollars(in);
+        Assert.assertEquals(expected, out);
     }
+
 }
