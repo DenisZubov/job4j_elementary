@@ -9,11 +9,9 @@ public class PrimeNumber {
                 k = k + 1;
             }
         }
-        return start;
+        return k;
     }
     public static void main (String args[]) {
-
-        System.out.println(calc(6, 27));
+        System.out.println(calc(36, 38));
     }
-
 }
