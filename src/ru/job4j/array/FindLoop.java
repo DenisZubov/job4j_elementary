@@ -17,6 +17,7 @@ public class FindLoop {
             for (int index = start; index <= finish; index++) {
                 if (data[index] == el) {
                     dip = true;
+                    break;
                 }
             }
         return dip;
