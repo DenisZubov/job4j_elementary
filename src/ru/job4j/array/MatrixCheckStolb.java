@@ -1,10 +1,10 @@
 package ru.job4j.array;
 
-public class MatrixCheck {
+public class MatrixCheckStolb {
     public static boolean monoHorizontal(char[][] board, int row) {
         boolean result = true;
-        for (int j = 0; j < board.length; j++) {
-            if (board[row][j] != 'X') {
+        for (int i = 0; i < board.length; i++) {
+            if (board[i][row] != 'X') {
                 result = false;
                 break;
             }
@@ -14,8 +14,8 @@ public class MatrixCheck {
 
     public static void main(String[] args) {
         char[][] array = {
-                {'h', 'h', 'h'},
-                {'h', 'h', 'h'},
+                {'h', 'h', 'X'},
+                {'h', 'h', 'X'},
                 {'X', 'X', 'X'}};
         boolean rsl = monoHorizontal(array, 2);
         System.out.println(rsl);
