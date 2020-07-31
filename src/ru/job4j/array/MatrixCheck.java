@@ -12,22 +12,18 @@ public class MatrixCheck {
         return result;
     }
 
-    public static char extractDiagonal(char[][] board) {
+    public static char[] extractDiagonal(char[][] board) {
         char[] array = new char[board.length];
         for (int i = 0; i < board.length; i++) {
-            for (int j; j < board.length; j++) {
-                if (i == j) {
-                    array[i] = board[i][j];
-                }
-            }
+            array[i] = board[i][i];
+            System.out.println(array[i]);
         }
-    return array[];
+        return array;
     }
-
     public static boolean monoVertical (char[][] board, int row) {
         boolean result = true;
-        for (int i = 0; i < board.length; i++) {
-            if (board[i][row] != 'X') {
+        for (char[] chars : board) {
+            if (chars[row] != 'X') {
                 result = false;
                 break;
             }
@@ -40,9 +36,11 @@ public class MatrixCheck {
     public static void main(String[] args) {
         char[][] array = {
                 {'h', 'h', 'h'},
-                {'h', 'h', 'h'},
+                {'h', 'z', 'h'},
                 {'X', 'X', 'X'}};
         boolean rsl = monoHorizontal(array, 2);
         System.out.println(rsl);
+        char max[] = extractDiagonal(array);
     }
+
 }
