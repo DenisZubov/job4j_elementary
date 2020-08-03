@@ -57,5 +57,6 @@ public class MatrixCheck {
         boolean k = monoVertical(array,0);
         boolean x = isWin(array);
         System.out.println(k);
+        System.out.println(x);
     }
 }
