@@ -22,25 +22,40 @@ public class MatrixCheck {
     }
     public static boolean monoVertical (char[][] board, int row) {
         boolean result = true;
-        for (char[] chars : board) {
-            if (chars[row] != 'X') {
+        for (int i = 0; i < board.length; i++) {
+            if (board[i][row] != 'X') {
                 result = false;
                 break;
             }
         }
         return result;
     }
-
+    public static boolean isWin(char[][] board) {
+        boolean result = false;
+        for (int i = 0; i < 5; i++) {
+            if (board[i][i] == 'X') {
+                result = monoHorizontal(board, i);
+                if (result == false) {
+                    result = monoVertical(board, i);
+                }
+            }
+                }
+        return result;
+        }
 
 
     public static void main(String[] args) {
         char[][] array = {
-                {'h', 'h', 'h'},
-                {'h', 'z', 'h'},
-                {'X', 'X', 'X'}};
+                {'X', 'X', 'X', 'X', 'X'},
+                {'X', 'X', 'h', 'g', 'j'},
+                {'y', 'X', 'h', 'g', 'j'},
+                {'X', 'X', 'h', 'g', 'j'},
+                {'X', 'X', 'h', 'g', 'j'}};
         boolean rsl = monoHorizontal(array, 2);
         System.out.println(rsl);
         char max[] = extractDiagonal(array);
+        boolean k = monoVertical(array,0);
+        boolean x = isWin(array);
+        System.out.println(k);
     }
-
 }
