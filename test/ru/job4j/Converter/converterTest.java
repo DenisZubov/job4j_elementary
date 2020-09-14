@@ -21,5 +21,5 @@ public class converterTest {
         int out = converter.rubleToDollars(in);
         Assert.assertEquals(expected, out);
     }
-
 }
+
